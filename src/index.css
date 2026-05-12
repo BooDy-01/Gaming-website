@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 228 100% 33%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 54%;
+    --accent: 228 100% 33%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 100% 63%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 228 100% 33%;
+    --radius: 0px;
+    --chart-1: 228 100% 33%;
+    --chart-2: 232 100% 55%;
+    --chart-3: 0 0% 54%;
+    --chart-4: 0 0% 98%;
+    --chart-5: 0 0% 6%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 228 100% 33%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 6%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 228 100% 33%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes metric-pulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(0, 36, 167, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(0, 36, 167, 0.6);
+  }
+}
+
+@keyframes grid-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 36, 167, 0.3), 0 0 10px rgba(0, 36, 167, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 36, 167, 0.6), 0 0 30px rgba(0, 36, 167, 0.3);
+  }
+}
+
+.animate-metric-pulse {
+  animation: metric-pulse 2s ease-in-out infinite;
+}
+
+.animate-grid-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: grid-reveal 0.4s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.font-mono-tech {
+  font-family: 'Courier New', 'JetBrains Mono', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 36, 167, 0.5);
+}
